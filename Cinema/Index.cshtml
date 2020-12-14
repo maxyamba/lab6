@@ -1,0 +1,45 @@
+﻿@model IEnumerable<lab6.Models.cinema>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_cinema)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cinema_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_city)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.id_cinema)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.cinema_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.id_city)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.id_cinema }) |
+        @Html.ActionLink("Details", "Details", new { id = item.id_cinema }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.id_cinema })
+    </td>
+</tr>
+}
+
+</table>
